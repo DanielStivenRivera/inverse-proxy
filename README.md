@@ -1,34 +1,39 @@
-# Proxy Inverso en Rust
+# Reverse Proxy in Rust
 
-Este proyecto es una implementación de un proxy inverso en Rust. Un proxy inverso es un servidor que se sitúa entre los clientes y uno o más servidores backend, redirigiendo las solicitudes de los clientes a los servidores adecuados y devolviendo las respuestas al cliente.
+This project is an implementation of a reverse proxy in Rust. A reverse proxy is a server that sits between clients and one or more backend servers, forwarding client requests to the appropriate servers and returning the responses to the client.
 
-## Características
+## Features
 
-- **Balanceo de carga**: Distribuye las solicitudes entre múltiples servidores backend.
-- **Configuración flexible**: Permite la configuración de múltiples servidores backend a través de un archivo de configuración.
-- **Alto rendimiento**: Aprovecha la eficiencia y seguridad de Rust para manejar un alto volumen de solicitudes.
-- **Fácil de usar**: Fácil de configurar y ejecutar.
+- **Load balancing**: Distributes requests among multiple backend servers.
+- **Flexible configuration**: Allows configuration of multiple backend servers through a configuration file.
+- **High performance**: Leverages Rust's efficiency and security to handle a high volume of requests.
+- **Easy to use**: Simple to configure and run.
 
-## Requisitos
+## Requirements
 
-- Rust 1.56 o superior (para soporte de edición 2021)
-- Cargo (el gestor de paquetes de Rust)
+- Rust 1.56 or higher (for 2021 edition support)
+- Cargo (Rust's package manager)
 
-## Instalación
+## Installation
 
-1. Clona el repositorio:
+1. Clone the repository:
 
    ```bash
-   git clone https://github.com/tuusuario/proxy-inverso-rust.git
-   cd proxy-inverso-rust
-   
-2. Compila el proyecto:
- ```bash
-    cargo build --release
-```
-# Configuración
-El proxy inverso se configura mediante un archivo config.yml. Aquí tienes un ejemplo de configuración:
-``` yml
+   git clone https://github.com/youruser/reverse-proxy-rust.git
+   cd reverse-proxy-rust
+   ```
+
+2. Build the project:
+
+   ```bash
+   cargo build --release
+   ```
+
+## Configuration
+
+The reverse proxy is configured using a `config.yml` file. Here is an example configuration:
+
+```yml
 microservices:
   - path_prefix: "/users"
     instances:
@@ -36,20 +41,30 @@ microservices:
       - "http://localhost:3201"
   - path_prefix: "/orders"
     instances:
-        - "http://localhost:3500"
-        - "http://localhost:3501"
+      - "http://localhost:3500"
+      - "http://localhost:3501"
 rate_limit: 100
 ```
 
-# Contribución
-¡Las contribuciones son bienvenidas! Si deseas contribuir al proyecto, por favor sigue estos pasos:
+## Contribution
 
-Haz un fork del repositorio.
+Contributions are welcome! If you would like to contribute to the project, please follow these steps:
 
-Crea una rama para tu feature (git checkout -b feature/nueva-funcionalidad).
+1. Fork the repository.
 
-Haz commit de tus cambios (git commit -am 'Añade nueva funcionalidad').
+2. Create a branch for your feature:  
+   ```bash
+   git checkout -b feature/new-feature
+   ```
 
-Haz push a la rama (git push origin feature/nueva-funcionalidad).
+3. Commit your changes:  
+   ```bash
+   git commit -am "Add new feature"
+   ```
 
-Abre un Pull Request.
+4. Push the branch:  
+   ```bash
+   git push origin feature/new-feature
+   ```
+
+5. Open a Pull Request.
