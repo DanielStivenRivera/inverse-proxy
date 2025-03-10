@@ -1,0 +1,13 @@
+[package]
+name = "inverse_proxy"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hyper = { version = "0.14", features = ["client", "http1", "http2", "server"] }
+hyper-tls = "0.5"
+tokio = { version = "1.0", features = ["full"] }
+rand = "0.8"
+http-body-util = "0.1"
+serde = { version = "1.0", features = ["derive"] }  # Para deserialización
+serde_yaml = "0.9"  # Para parsing YAML
